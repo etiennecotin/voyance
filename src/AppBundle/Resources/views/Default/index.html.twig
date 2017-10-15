@@ -1,0 +1,52 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <h1 class="text-center">Et si on devait mourir demain? Toi qu’est ce que tu ferai?</h1>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="col-sm-6 col-sm-offset-3 ">
+                <img src="{{ asset('assets/img/voyanceBIS.jpg') }}" alt="" class="img-responsive">
+            </div>
+            <div class="col-sm-6 col-sm-offset-3 contain">
+                <p>La mort est inéluctable! Découvrez la votre, le lieu, la date de
+                    celle-ci, et de quelle manière. <br>
+                    Peut-être saurez-vous la déjouer?
+                </p>
+
+                <br>
+                <br>
+                <br>
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+
+
+                        <div class="col-lg12 text-center contain">
+                            <h3 class="text-center">Bonjour {{ app.user.userPrenom }}</h3>
+                            <a href="{{ url('predictionpage') }}"><button class="text-center">Faire ma prédiction du jour </button></a>
+                        </div>
+                    {% else %}
+                        <h3>Me connecter pour effectuer une préduiction</h3>
+                        <a href="{{ path('fos_user_security_login') }}"><button class="text-center">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</button></a>
+                    {% endif %}
+
+                {% if app.request.hasPreviousSession %}
+                    {% for type, messages in app.session.flashbag.all() %}
+                        {% for message in messages %}
+                            <div class="flash-{{ type }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                {% endif %}
+
+            </div>
+
+        </section>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <h1 class="text-center">Votre Horoscope du jour !</h1>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="col-sm-6 col-sm-offset-3 ">
+                {#<img src="{{ asset('assets/img/DosCarte.gif') }}" alt="" class="img-responsive">#}
+            </div>
+            <div class="col-sm-6 col-sm-offset-3 contain">
+
+                <div class="col-lg12 text-center contain">
+                    <a href="{{ url('accueilpage') }}"><button class="text-center">Retour à l'accueil</button></a>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+{% endblock %}

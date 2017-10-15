@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Voyance !</title>
+
+    {#<link rel="stylesheet" href="{{ asset('assets/css/screen2.css') }}">#}
+
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/perso.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="{{ asset('assets/js/jquery.min.js')}}"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+{% include 'AppBundle::Default/header.html.twig' %}
+{% block body %}{% endblock %}
+{% block scripts %}{% endblock %}
+
+<script src="{{ asset('assets/js/bootstrap.js') }}"></script>
+</body>
+</html>
